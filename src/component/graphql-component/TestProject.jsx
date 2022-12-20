@@ -12,58 +12,58 @@ function TestProject() {
   const [start_time, setStartTime] = useState();
   const [end_time, setEndTime] = useState();
 
-  //   const [addGantt, { data: addGanttData, error: addGanttError }] =
-  //     useMutation(ADD_GANTT);
-  //   const [updateGantt, { data: updateGanttData, error: updateGanttError }] =
-  //     useMutation(UPDATE_GANTT);
-  //   const [deleteGantt, { data: deleteGanttData, error: deleteGanttError }] =
-  //     useMutation(DELETE_GANTT);
-  //   // const [deleteGantt, { error: deleteGanttError}] = DELETE_GANTT;
+    const [addGantt, { data: addGanttData, error: addGanttError }] =
+      useMutation(ADD_GANTT);
+    const [updateGantt, { data: updateGanttData, error: updateGanttError }] =
+      useMutation(UPDATE_GANTT);
+    const [deleteGantt, { data: deleteGanttData, error: deleteGanttError }] =
+      useMutation(DELETE_GANTT);
+    // const [deleteGantt, { error: deleteGanttError}] = DELETE_GANTT;
 
-  //   const createGantt = () => {
-  //     addGantt({
-  //       variables: {
-  //         name: name,
-  //         description: description,
-  //         user_id: user_id,
-  //         start_time: start_time,
-  //         end_time: end_time,
-  //       },
-  //     });
+    const createGantt = () => {
+      addGantt({
+        variables: {
+          name: name,
+          description: description,
+          user_id: user_id,
+          start_time: start_time,
+          end_time: end_time,
+        },
+      });
 
-  //     if (addGanttError) {
-  //       console.log(JSON.stringify(addGanttError, null, 2));
-  //     }
-  //   };
+      if (addGanttError) {
+        console.log(JSON.stringify(addGanttError, null, 2));
+      }
+    };
 
-  //   const changeGantt = () => {
-  //     updateGantt({
-  //       variables: {
-  //         id: id,
-  //         name: name,
-  //         description: description,
-  //         user_id: user_id,
-  //         start_time: start_time,
-  //         end_time: end_time,
-  //       },
-  //     });
+    const changeGantt = () => {
+      updateGantt({
+        variables: {
+          id: id,
+          name: name,
+          description: description,
+          user_id: user_id,
+          start_time: start_time,
+          end_time: end_time,
+        },
+      });
 
-  //     if (updateGanttError) {
-  //       console.log(JSON.stringify(updateGanttError, null, 2));
-  //     }
-  //   };
+      if (updateGanttError) {
+        console.log(JSON.stringify(updateGanttError, null, 2));
+      }
+    };
 
-  //   const removeGantt = () => {
-  //     deleteGantt({
-  //       variables: {
-  //         id: id,
-  //       },
-  //     });
+    const removeGantt = () => {
+      deleteGantt({
+        variables: {
+          id: id,
+        },
+      });
 
-  //     if (deleteGanttError) {
-  //       console.log(JSON.stringify(deleteGanttError, null, 2));
-  //     }
-  //   };
+      if (deleteGanttError) {
+        console.log(JSON.stringify(deleteGanttError, null, 2));
+      }
+    };
 
   // print gantt data //
   const { error, loading, data } = useQuery(GET_PROJECT_DATA);
@@ -150,7 +150,7 @@ function TestProject() {
 
   return (
     <div>
-      {/* <input
+      <input
         type="text"
         placeholder="ID"
         onChange={(e) => {
@@ -194,9 +194,9 @@ function TestProject() {
           setEndTime(e.target.value);
         }}
       />
-      <button onClick={D}>Create Gantt</button>
+      <button onClick={createGantt}>Create Gantt</button>
       <button onClick={changeGantt}>Update Gantt</button>
-      <button onClick={removeGantt}>Delete Gantt</button> */}
+      <button onClick={removeGantt}>Delete Gantt</button>
       {printSumCost()}
       {printSumActual()}
     </div>
